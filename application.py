@@ -1,4 +1,3 @@
-from bs4.element import Script
 from Script_meteo import Combinaison
 from Script_instagram import donnees_insta_par_lieu
 from Script_instagram import nb_visiteurs_par_mois
