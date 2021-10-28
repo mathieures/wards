@@ -1,4 +1,4 @@
-import calendar, os
+import calendar
 #https://meteostat.net/fr/place/2E2MPO?t=2018-01-01/2018-10-21
 
 def stockageTemp(dossier,dossierArrive,annee,lieu):

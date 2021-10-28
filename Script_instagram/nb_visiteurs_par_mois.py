@@ -1,5 +1,5 @@
 import pandas as pd
-import json # seulement pour l'affichage
+#import json # seulement pour l'affichage
 import sys
 
 def obtenir_visiteurs_csv(nom_fichier_csv, colonne_dates, parse=True, sep=","):
