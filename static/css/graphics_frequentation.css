@@ -1,0 +1,218 @@
+.freqwrapper {
+  margin: 20px 0;
+  margin-right: 4%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr;
+  grid-template-rows: 2fr;
+  grid-gap: 0px 5px;
+  grid-auto-rows: minmax(100px, 100%);
+}
+
+.freqwrapper .graphic {
+  height: 600px;
+  border-radius: 0 15px 15px 15px;
+  background-color: white;
+  display: flex;
+  flex-flow: column;
+}
+
+.freqwrapper .graphic .name {
+  width: 100%;
+  height: 50px;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-top: 10px;
+}
+
+.freqwrapper .graphic .name .left {
+  height: 50px;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: left;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
+.freqwrapper .graphic .name .left .country {
+  height: 30px;
+  font-family: 'Roboto', Calibri, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.freqwrapper .graphic .name .left p {
+  height: 50px;
+  top: 0;
+  font-family: 'Roboto', Calibri, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.freqwrapper .graphic .name .right p {
+  font-family: 'Roboto', Calibri, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  margin-left: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.button p,a {
+  font-family: 'Roboto', Calibri, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  text-decoration: none;
+  color: #7E82E7;
+}
+
+.freqwrapper .div-6 {
+  grid-column: 1 / span 7;
+  grid-row: 1;
+}
+.freqwrapper .div-7 {
+  grid-column: 1 / span 7;
+  grid-row: 1;
+  box-shadow: 0px 5px 5px gray;
+  border-radius: 0 15px 15px 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.choicewrapper {
+  margin: -50px 2%;
+  display: grid;
+  grid-template-columns: 8fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.1fr 2fr;
+  grid-gap: 0px;
+  grid-auto-rows: minmax(100px, 100%);
+}
+
+
+
+
+.choicewrapper .button {
+  height: 50px;
+  width: 100%;
+  background-color: #EBECFF;
+  box-shadow: 0px 0px 0px gray;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.choicewrapper .graphic {
+  width: 100%;
+  height: 500px;
+  border-radius: 15px 0 15px 15px;
+  display: flex;
+  flex-flow: column;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.choicewrapper .button .freq {
+  width: 60px;
+  height: 40px;
+  border-radius: 5%;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  top:0;
+  left:0;
+  cursor: pointer;
+  background-color: #E5E5E5;
+}
+.choicewrapper .button .freq:hover {
+  background-color: #E5E5E5;
+}
+.choicewrapper .button .freq i {
+  color: orange;
+}
+
+#bgc_freq_18 {
+    border: solid 2px red;
+}
+#bgc_freq_19 {
+    border: solid 2px green;
+}
+#bgc_freq_20 {
+    border: solid 2px blue;
+}
+#bgc_freq_21 {
+    border: solid 2px yellow;
+}
+
+
+#bsa_freq_18 {
+    border: solid 2px red;
+}
+#bsa_freq_19 {
+    border: solid 2px green;
+}
+#bsa_freq_20 {
+    border: solid 2px blue;
+}
+#bsa_freq_21 {
+    border: solid 2px yellow;
+}
+
+.choicewrapper .div-1 {
+  grid-column: 2;
+  grid-row: 1;
+}
+.choicewrapper .div-2 {
+  grid-column: 3;
+  grid-row: 1;
+}
+.choicewrapper .div-3 {
+  grid-column: 4;
+  grid-row: 1;
+}
+.choicewrapper .div-4 {
+  grid-column: 5;
+  grid-row: 1;
+}
+.choicewrapper .div-5 {
+  grid-column: 1 / span 3;
+  grid-row: 2;
+}
+.choicewrapper .div-6 {
+  grid-column: 1 / span 3;
+  grid-row: 2;
+}

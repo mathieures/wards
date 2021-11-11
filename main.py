@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 import pandas as pd
-import notes, temperature
+import notes, temperature,frequentation
 
 # ----- Lancement de l'app ----- #
 app = Flask(__name__)
@@ -39,6 +39,53 @@ df_temp_mean_sa = temperature.mean_all(dfs_temp_sa)
 temperature.barplot_moy_all(df_temp_mean_gc, "gc")
 temperature.barplot_moy_all(df_temp_mean_sa, "sa")
 
+
+# Partie fréquentation
+# Frequentation
+dfs_freq_gc = frequentation.df_split_by_year(df_gc)
+
+frequentation.df_barplots([dfs_freq_gc[0]],["2018"],"nb_visiteurs","gc","Visiteurs")
+frequentation.df_barplots([dfs_freq_gc[1]],["2019"],"nb_visiteurs","gc","Visiteurs")
+frequentation.df_barplots([dfs_freq_gc[2]],["2020"],"nb_visiteurs","gc","Visiteurs")
+frequentation.df_barplots([dfs_freq_gc[3]],["2021"],"nb_visiteurs","gc","Visiteurs")
+
+frequentation.df_barplots([dfs_freq_gc[0],dfs_freq_gc[1]],["2018","2019"],"nb_visiteurs","gc","Visiteurs")
+frequentation.df_barplots([dfs_freq_gc[0],dfs_freq_gc[2]],["2018","2020"],"nb_visiteurs","gc","Visiteurs")
+frequentation.df_barplots([dfs_freq_gc[0],dfs_freq_gc[3]],["2018","2021"],"nb_visiteurs","gc","Visiteurs")
+frequentation.df_barplots([dfs_freq_gc[1],dfs_freq_gc[2]],["2019","2020"],"nb_visiteurs","gc","Visiteurs")
+frequentation.df_barplots([dfs_freq_gc[1],dfs_freq_gc[3]],["2019","2021"],"nb_visiteurs","gc","Visiteurs")
+frequentation.df_barplots([dfs_freq_gc[2],dfs_freq_gc[3]],["2020","2021"],"nb_visiteurs","gc","Visiteurs")
+
+frequentation.df_barplots([dfs_freq_gc[0],dfs_freq_gc[1],dfs_freq_gc[2]],["2018","2019","2020"],"nb_visiteurs","gc","Visiteurs")
+frequentation.df_barplots([dfs_freq_gc[0],dfs_freq_gc[1],dfs_freq_gc[3]],["2018","2019","2021"],"nb_visiteurs","gc","Visiteurs")
+frequentation.df_barplots([dfs_freq_gc[0],dfs_freq_gc[2],dfs_freq_gc[3]],["2018","2020","2021"],"nb_visiteurs","gc","Visiteurs")
+frequentation.df_barplots([dfs_freq_gc[1],dfs_freq_gc[2],dfs_freq_gc[3]],["2019","2020","2021"],"nb_visiteurs","gc","Visiteurs")
+
+frequentation.df_barplots(dfs_freq_gc,["2018","2019","2020","2021"],"nb_visiteurs","gc","Visiteurs")
+
+
+############################################################################
+
+dfs_freq_sa = frequentation.df_split_by_year(df_sa)
+
+frequentation.df_barplots([dfs_freq_sa[0]],["2018"],"nb_visiteurs","sa","Visiteurs")
+frequentation.df_barplots([dfs_freq_sa[1]],["2019"],"nb_visiteurs","sa","Visiteurs")
+frequentation.df_barplots([dfs_freq_sa[2]],["2020"],"nb_visiteurs","sa","Visiteurs")
+frequentation.df_barplots([dfs_freq_sa[3]],["2021"],"nb_visiteurs","sa","Visiteurs")
+
+frequentation.df_barplots([dfs_freq_sa[0],dfs_freq_sa[1]],["2018","2019"],"nb_visiteurs","sa","Visiteurs")
+frequentation.df_barplots([dfs_freq_sa[0],dfs_freq_sa[2]],["2018","2020"],"nb_visiteurs","sa","Visiteurs")
+frequentation.df_barplots([dfs_freq_sa[0],dfs_freq_sa[3]],["2018","2021"],"nb_visiteurs","sa","Visiteurs")
+frequentation.df_barplots([dfs_freq_sa[1],dfs_freq_sa[2]],["2019","2020"],"nb_visiteurs","sa","Visiteurs")
+frequentation.df_barplots([dfs_freq_sa[1],dfs_freq_sa[3]],["2019","2021"],"nb_visiteurs","sa","Visiteurs")
+frequentation.df_barplots([dfs_freq_sa[2],dfs_freq_sa[3]],["2020","2021"],"nb_visiteurs","sa","Visiteurs")
+
+frequentation.df_barplots([dfs_freq_sa[0],dfs_freq_sa[1],dfs_freq_sa[2]],["2018","2019","2020"],"nb_visiteurs","sa","Visiteurs")
+frequentation.df_barplots([dfs_freq_sa[0],dfs_freq_sa[1],dfs_freq_sa[3]],["2018","2019","2021"],"nb_visiteurs","sa","Visiteurs")
+frequentation.df_barplots([dfs_freq_sa[0],dfs_freq_sa[2],dfs_freq_sa[3]],["2018","2020","2021"],"nb_visiteurs","sa","Visiteurs")
+frequentation.df_barplots([dfs_freq_sa[1],dfs_freq_sa[2],dfs_freq_sa[3]],["2019","2020","2021"],"nb_visiteurs","sa","Visiteurs")
+
+frequentation.df_barplots(dfs_freq_sa,["2018","2019","2020","2021"],"nb_visiteurs","sa","Visiteurs")
 
 
 # @Routes
@@ -89,8 +136,10 @@ def about():
 # Page météo (avec températures et précipitations)
 @app.route('/meteo')
 def meteo():
-
-    # Température
-
     return render_template('meteo.html')
+
+
+@app.route('/frequentation')
+def frequentation():
+    return render_template('frequentation.html')
 

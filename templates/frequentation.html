@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fréquentation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/graphics_frequentation.css') }}">
+</head>
+
+<body>
+{% extends "menu.html" %}
+
+{% block content %}
+  <div class="freqwrapper">
+    <div class="div-7">
+      <div class="graphic">
+        <div class="name">
+          <div class="left">
+          </div>
+          <div class="right">
+          </div>
+        </div>
+        <div class="image">
+        </div>
+      </div>
+    </div>
+    <div class="div-6" id="gc_all">
+      <div class="graphic">
+        <div class="name">
+          <div class="left">
+            <p>Grand Canyon</p>
+            <p class="country">Arizona, États-Unis</p>
+          </div>
+        </div>
+
+        <div class="choicewrapper">
+          <div class="div-1">
+            <div class="button">
+              <div class="freq" onclick="changeStateGCFreq(this)" id="bgc_freq_18">
+                <p>2018</p>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="button">
+              <div class="freq" onclick="changeStateGCFreq(this)" id="bgc_freq_19">
+                <p>2019</p>
+              </div>
+            </div>
+          </div>
+          <div class="div-3">
+            <div class="button">
+              <div class="freq" onclick="changeStateGCFreq(this)" id="bgc_freq_20">
+                <p>2020</p>
+              </div>
+            </div>
+          </div>
+          <div class="div-4">
+            <div class="button">
+              <div class="freq" onclick="changeStateGCFreq(this)" id="bgc_freq_21">
+                <p>2021</p>
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="gc_freq_1">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/gc/2018.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="gc_freq_2">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/gc/2019.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="gc_freq_3">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/gc/2018_2019.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="gc_freq_4">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/gc/2020.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="gc_freq_5">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/gc/2018_2020.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="gc_freq_6">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/gc/2019_2020.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="gc_freq_7">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/gc/2018_2019_2020.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="gc_freq_8">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/gc/2021.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="gc_freq_9">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/gc/2018_2021.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="gc_freq_10">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/gc/2019_2021.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="gc_freq_11">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/gc/2018_2019_2021.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="gc_freq_12">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/gc/2020_2021.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="gc_freq_13">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/gc/2018_2020_2021.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="gc_freq_14">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/gc/2019_2020_2021.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="gc_freq_15">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/gc/2018_2019_2020_2021.html" %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="freqwrapper">
+    <div class="div-7">
+      <div class="graphic">
+        <div class="name">
+          <div class="left">
+          </div>
+          <div class="right">
+          </div>
+        </div>
+        <div class="image">
+        </div>
+      </div>
+    </div>
+    <div class="div-6" id="sa_all">
+      <div class="graphic">
+        <div class="name">
+          <div class="left">
+            <p>Missions de San Antonio</p>
+            <p class="country">San Antonio, Texas, États-Unis</p>
+          </div>
+        </div>
+
+        <div class="choicewrapper">
+          <div class="div-1">
+            <div class="button">
+              <div class="freq" onclick="changeStateSAFreq(this)" id="bsa_freq_18">
+                <p>2018</p>
+              </div>
+            </div>
+          </div>
+          <div class="div-2">
+            <div class="button">
+              <div class="freq" onclick="changeStateSAFreq(this)" id="bsa_freq_19">
+                <p>2019</p>
+              </div>
+            </div>
+          </div>
+          <div class="div-3">
+            <div class="button">
+              <div class="freq" onclick="changeStateSAFreq(this)" id="bsa_freq_20">
+                <p>2020</p>
+              </div>
+            </div>
+          </div>
+          <div class="div-4">
+            <div class="button">
+              <div class="freq" onclick="changeStateSAFreq(this)" id="bsa_freq_21">
+                <p>2021</p>
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="sa_freq_1">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/sa/2018.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="sa_freq_2">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/sa/2019.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="sa_freq_3">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/sa/2018_2019.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="sa_freq_4">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/sa/2020.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="sa_freq_5">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/sa/2018_2020.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="sa_freq_6">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/sa/2019_2020.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="sa_freq_7">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/sa/2018_2019_2020.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="sa_freq_8">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/sa/2021.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="sa_freq_9">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/sa/2018_2021.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="sa_freq_10">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/sa/2019_2021.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="sa_freq_11">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/sa/2018_2019_2021.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="sa_freq_12">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/sa/2020_2021.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="sa_freq_13">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/sa/2018_2020_2021.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="sa_freq_14">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/sa/2019_2020_2021.html" %}
+              </div>
+            </div>
+          </div>
+          <div class="div-5" id="sa_freq_15">
+            <div class="graphic">
+              <div class="image">
+                {% include "frequentation/sa/2018_2019_2020_2021.html" %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<script>
+  function changeStateGCFreq(element){
+    var buttons = ['bgc_freq_18', 'bgc_freq_19','bgc_freq_20','bgc_freq_21'];
+    var graphics = ['gc_freq_1','gc_freq_2','gc_freq_3','gc_freq_4','gc_freq_5','gc_freq_6','gc_freq_7','gc_freq_8','gc_freq_9','gc_freq_10','gc_freq_11','gc_freq_12','gc_freq_13','gc_freq_14','gc_freq_15']
+	  var butt = element.id;
+	  y = document.getElementById(butt);
+    var graph = String(butt).substring(1,9);
+    console.log(y.style.backgroundColor);
+    if(y.style.backgroundColor == "#E5E5E5" || y.style.backgroundColor == ""){
+      y.style.backgroundColor = "white";
+    }else{
+      y.style.backgroundColor = "";
+    }
+    console.log(y.style.backgroundColor);
+    var count = 0;
+    for (var i = 0; i < buttons.length; i++) {
+      var x = document.getElementById(String(buttons[i]));
+      if(x.style.backgroundColor != "white"){
+        count = count + Math.pow(2,i);
+      }
+    }
+    console.log(count);
+    for(var j = 0; j < graphics.length; j++){
+      var x = document.getElementById(String(graphics[j]));
+      if (x.style.display != "none") {
+         x.style.display = "none";
+      }
+    }
+    var x = document.getElementById(String(graph + String(count)));
+    if (x != null && x.style.display === "none") {
+          x.style.display = "block";
+    }
+  }
+
+
+  function changeStateSAFreq(element){
+    var buttons = ['bsa_freq_18', 'bsa_freq_19','bsa_freq_20','bsa_freq_21'];
+    var graphics = ['sa_freq_1','sa_freq_2','sa_freq_3','sa_freq_4','sa_freq_5','sa_freq_6','sa_freq_7','sa_freq_8','sa_freq_9','sa_freq_10','sa_freq_11','sa_freq_12','sa_freq_13','sa_freq_14','sa_freq_15']
+	  var butt = element.id;
+	  y = document.getElementById(butt);
+    var graph = String(butt).substring(1,9);
+    console.log(y.style.backgroundColor);
+    if(y.style.backgroundColor == "#E5E5E5" || y.style.backgroundColor == ""){
+      y.style.backgroundColor = "white";
+    }else{
+      y.style.backgroundColor = "";
+    }
+    console.log(y.style.backgroundColor);
+    var count = 0;
+    for (var i = 0; i < buttons.length; i++) {
+      var x = document.getElementById(String(buttons[i]));
+      if(x.style.backgroundColor != "white"){
+        count = count + Math.pow(2,i);
+      }
+    }
+    console.log(count);
+    for(var j = 0; j < graphics.length; j++){
+      var x = document.getElementById(String(graphics[j]));
+      if (x.style.display != "none") {
+         x.style.display = "none";
+      }
+    }
+    var x = document.getElementById(String(graph + String(count)));
+    if (x != null && x.style.display === "none") {
+          x.style.display = "block";
+    }
+  }
+</script>
+{% endblock %}
+
+</body>
+</html>
