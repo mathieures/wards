@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 import pandas as pd
-import notes, temperature,frequentation
+import notes, temperature,frequentation,precipitation
 
 # ----- Lancement de l'app ----- #
 app = Flask(__name__)
@@ -38,6 +38,18 @@ df_temp_mean_gc = temperature.mean_all(dfs_temp_gc)
 df_temp_mean_sa = temperature.mean_all(dfs_temp_sa)
 temperature.barplot_moy_all(df_temp_mean_gc, "gc")
 temperature.barplot_moy_all(df_temp_mean_sa, "sa")
+
+# Précipitation
+dfs_prec_gc = precipitation.df_split_by_year(df_gc)
+dfs_prec_sa = precipitation.df_split_by_year(df_sa)
+precipitation.barplot_all(dfs_prec_gc,"gc")
+precipitation.barplot_all(dfs_prec_sa,"sa")
+
+df_prec_mean_gc = precipitation.mean_all(dfs_prec_gc)
+df_prec_mean_sa = precipitation.mean_all(dfs_prec_sa)
+precipitation.barplot_moy_all(df_prec_mean_gc, "gc")
+precipitation.barplot_moy_all(df_prec_mean_sa, "sa")
+
 
 
 # Partie fréquentation
