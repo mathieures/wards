@@ -155,3 +155,7 @@ def meteo():
 def frequentation():
     return render_template('frequentation.html')
 
+
+@app.route('/flux')
+def flux():
+    return render_template('flux.html')

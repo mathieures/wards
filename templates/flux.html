@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flux</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/graphics_flux.css') }}">
+</head>
+
+<body id="body">
+{% extends "menu.html" %}
+
+{% block content %}
+  <div class="fluxwrapper">
+    <div class="div-1">
+      <div class="graphic">
+        <div class="name">
+          <div class="left">
+          </div>
+          <div class="right">
+          </div>
+        </div>
+        <div class="image">
+        </div>
+      </div>
+    </div>
+    <div class="div-2">
+      <div class="graphic">
+        <div class="name">
+          <div class="left">
+            <p>Grand Canyon</p>
+            <p class="country">Arizona, États-Unis</p>
+          </div>
+        </div>
+        <div class="choicewrapper">
+        <div class="div-1">
+          <div class="graphic">
+            {% include "flux/GC.html" %}
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fluxwrapper">
+    <div class="div-1">
+      <div class="graphic">
+        <div class="name">
+          <div class="left">
+          </div>
+          <div class="right">
+          </div>
+        </div>
+        <div class="image">
+        </div>
+      </div>
+    </div>
+    <div class="div-2">
+      <div class="graphic">
+        <div class="name">
+          <div class="left">
+            <p>Missions de San Antonio</p>
+            <p class="country">San Antonio, Texas, États-Unis</p>
+          </div>
+        </div>
+        <div class="choicewrapper">
+        <div class="div-1">
+          <div class="graphic">
+            {% include "flux/SA.html" %}
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+</body>
+</html>
