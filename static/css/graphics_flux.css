@@ -5,8 +5,8 @@
 }
 
 .fluxwrapper {
-  margin: 30px 2%;
-  margin-right: 4%;
+  margin: 15px 0;
+  margin-right: 2%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 2fr;
@@ -99,6 +99,15 @@
   border-radius: 0 0 15px 15px;
   display: flex;
   flex-flow: column;
+}
+
+
+a {
+ text-decoration : none;
+}
+
+.content {
+ text-decoration : none;
 }
 
 .choicewrapper .div-1 {

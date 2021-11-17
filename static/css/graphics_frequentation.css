@@ -120,12 +120,17 @@
 
 .choicewrapper .graphic {
   width: 100%;
-  height: 500px;
+  height: 520px;
   border-radius: 15px 0 15px 15px;
   display: flex;
+  text-align: center;
   flex-flow: column;
   overflow-x: hidden;
   overflow-y: hidden;
+}
+
+.choicewrapper .graphic .image {
+  margin-top: -40px;
 }
 
 .choicewrapper .button .freq {
@@ -198,3 +203,18 @@
   grid-column: 1 / span 3;
   grid-row: 2;
 }
+
+/*
+#gc_freq_1, #gc_freq_2, #gc_freq_3, #gc_freq_4, #gc_freq_5, #gc_freq_6, #gc_freq_7, #gc_freq_8, #gc_freq_9, #gc_freq_10, #gc_freq_11, #gc_freq_12, #gc_freq_13, #gc_freq_14 {
+  display : none;
+}
+*/
+
+p .center {
+  font-family: 'Roboto', Calibri, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+  color: black;
+ }
