@@ -1,6 +1,10 @@
+body {
+  overflow-x : hidden;
+}
+
 .freqwrapper {
-  margin: 20px 0;
-  margin-right: 4%;
+  margin: 15px 0;
+  margin-right: 2%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr;
   grid-template-rows: 2fr;
@@ -109,7 +113,6 @@
 .choicewrapper .button {
   height: 50px;
   width: 100%;
-  background-color: #EBECFF;
   box-shadow: 0px 0px 0px gray;
   background-color: white;
   display: flex;
@@ -162,7 +165,7 @@
     border: solid 2px blue;
 }
 #bgc_freq_21 {
-    border: solid 2px yellow;
+    border: solid 2px black;
 }
 
 
@@ -176,22 +179,22 @@
     border: solid 2px blue;
 }
 #bsa_freq_21 {
-    border: solid 2px yellow;
+    border: solid 2px black;
 }
 
-.choicewrapper .div-1 {
+.choicewrapper .div-10 {
   grid-column: 2;
   grid-row: 1;
 }
-.choicewrapper .div-2 {
+.choicewrapper .div-20 {
   grid-column: 3;
   grid-row: 1;
 }
-.choicewrapper .div-3 {
+.choicewrapper .div-30 {
   grid-column: 4;
   grid-row: 1;
 }
-.choicewrapper .div-4 {
+.choicewrapper .div-40 {
   grid-column: 5;
   grid-row: 1;
 }

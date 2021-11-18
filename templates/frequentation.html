@@ -4,368 +4,404 @@
     <meta charset="UTF-8">
     <title>Fréquentation</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/graphics_frequentation.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flux.css') }}">
 </head>
 
 <body>
 {% extends "menu.html" %}
 
 {% block content %}
-  <div class="freqwrapper">
-    <div class="div-7">
-      <div class="graphic">
-        <div class="name">
-          <div class="left">
-          </div>
-          <div class="right">
+  <div class="tabwrapper">
+    <div class="div-1">
+      <div class="freqwrapper">
+        <div class="div-7">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+              </div>
+              <div class="right">
+              </div>
+            </div>
+            <div class="image">
+            </div>
           </div>
         </div>
-        <div class="image">
+        <div class="div-6" id="gc_all">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+                <p>Grand Canyon</p>
+                <p class="country">Arizona, États-Unis</p>
+              </div>
+            </div>
+
+            <div class="choicewrapper">
+              <div class="div-10">
+                <div class="button">
+                  <div class="freq" onclick="changeStateGCFreq(this)" id="bgc_freq_18">
+                    <p>2018</p>
+                  </div>
+                </div>
+              </div>
+              <div class="div-20">
+                <div class="button">
+                  <div class="freq" onclick="changeStateGCFreq(this)" id="bgc_freq_19">
+                    <p>2019</p>
+                  </div>
+                </div>
+              </div>
+              <div class="div-30">
+                <div class="button">
+                  <div class="freq" onclick="changeStateGCFreq(this)" id="bgc_freq_20">
+                    <p>2020</p>
+                  </div>
+                </div>
+              </div>
+              <div class="div-40">
+                <div class="button">
+                  <div class="freq" onclick="changeStateGCFreq(this)" id="bgc_freq_21">
+                    <p>2021</p>
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="gc_freq_1">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant l'année : 2018</p>
+                  <div class="image">
+                    {% include "frequentation/gc/2018.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="gc_freq_2">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant l'année : 2019</p>
+                  <div class="image">
+                    {% include "frequentation/gc/2019.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="gc_freq_3">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2019</p>
+                  <div class="image">
+                    {% include "frequentation/gc/2018_2019.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="gc_freq_4">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant l'année : 2020</p>
+                  <div class="image">
+                    {% include "frequentation/gc/2020.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="gc_freq_5">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2020</p>
+                  <div class="image">
+                    {% include "frequentation/gc/2018_2020.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="gc_freq_6">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2019, 2020</p>
+                  <div class="image">
+                    {% include "frequentation/gc/2019_2020.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="gc_freq_7">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2019, 2020</p>
+                  <div class="image">
+                    {% include "frequentation/gc/2018_2019_2020.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="gc_freq_8">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant l'année : 2021</p>
+                  <div class="image">
+                    {% include "frequentation/gc/2021.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="gc_freq_9">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2021</p>
+                  <div class="image">
+                    {% include "frequentation/gc/2018_2021.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="gc_freq_10">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2019, 2021</p>
+                  <div class="image">
+                    {% include "frequentation/gc/2019_2021.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="gc_freq_11">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2019, 2021</p>
+                  <div class="image">
+                    {% include "frequentation/gc/2018_2019_2021.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="gc_freq_12">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2020, 2021</p>
+                  <div class="image">
+                    {% include "frequentation/gc/2020_2021.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="gc_freq_13">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2020, 2021</p>
+                  <div class="image">
+                    {% include "frequentation/gc/2018_2020_2021.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="gc_freq_14">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2019, 2020, 2021</p>
+                  <div class="image">
+                    {% include "frequentation/gc/2019_2020_2021.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="gc_freq_15">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2019, 2020, 2021</p>
+                  <div class="image">
+                    {% include "frequentation/gc/2018_2019_2020_2021.html" %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="div-6" id="gc_all">
-      <div class="graphic">
-        <div class="name">
-          <div class="left">
-            <p>Grand Canyon</p>
-            <p class="country">Arizona, États-Unis</p>
+
+    <div class="div-2">
+      <div class="freqwrapper">
+        <div class="div-7">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+              </div>
+              <div class="right">
+              </div>
+            </div>
+            <div class="image">
+            </div>
           </div>
         </div>
+        <div class="div-6" id="sa_all">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+                <p>Missions de San Antonio</p>
+                <p class="country">San Antonio, Texas, États-Unis</p>
+              </div>
+            </div>
 
-        <div class="choicewrapper">
-          <div class="div-1">
-            <div class="button">
-              <div class="freq" onclick="changeStateGCFreq(this)" id="bgc_freq_18">
-                <p>2018</p>
+            <div class="choicewrapper">
+              <div class="div-10">
+                <div class="button">
+                  <div class="freq" onclick="changeStateSAFreq(this)" id="bsa_freq_18">
+                    <p>2018</p>
+                  </div>
+                </div>
+              </div>
+              <div class="div-20">
+                <div class="button">
+                  <div class="freq" onclick="changeStateSAFreq(this)" id="bsa_freq_19">
+                    <p>2019</p>
+                  </div>
+                </div>
+              </div>
+              <div class="div-30">
+                <div class="button">
+                  <div class="freq" onclick="changeStateSAFreq(this)" id="bsa_freq_20">
+                    <p>2020</p>
+                  </div>
+                </div>
+              </div>
+              <div class="div-40">
+                <div class="button">
+                  <div class="freq" onclick="changeStateSAFreq(this)" id="bsa_freq_21">
+                    <p>2021</p>
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="sa_freq_1">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant l'année : 2018</p>
+                  <div class="image">
+                    {% include "frequentation/sa/2018.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="sa_freq_2">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant l'année : 2019</p>
+                  <div class="image">
+                    {% include "frequentation/sa/2019.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="sa_freq_3">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2019</p>
+                  <div class="image">
+                    {% include "frequentation/sa/2018_2019.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="sa_freq_4">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant l'année : 2020</p>
+                  <div class="image">
+                    {% include "frequentation/sa/2020.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="sa_freq_5">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2020</p>
+                  <div class="image">
+                    {% include "frequentation/sa/2018_2020.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="sa_freq_6">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2019, 2020</p>
+                  <div class="image">
+                    {% include "frequentation/sa/2019_2020.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="sa_freq_7">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2019, 2020</p>
+                  <div class="image">
+                    {% include "frequentation/sa/2018_2019_2020.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="sa_freq_8">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant l'année : 2021</p>
+                  <div class="image">
+                    {% include "frequentation/sa/2021.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="sa_freq_9">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2021</p>
+                  <div class="image">
+                    {% include "frequentation/sa/2018_2021.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="sa_freq_10">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2019, 2021</p>
+                  <div class="image">
+                    {% include "frequentation/sa/2019_2021.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="sa_freq_11">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2019, 2021</p>
+                  <div class="image">
+                    {% include "frequentation/sa/2018_2019_2021.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="sa_freq_12">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2020, 2021</p>
+                  <div class="image">
+                    {% include "frequentation/sa/2020_2021.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="sa_freq_13">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2020, 2021</p>
+                  <div class="image">
+                    {% include "frequentation/sa/2018_2020_2021.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="sa_freq_14">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2019, 2020, 2021</p>
+                  <div class="image">
+                    {% include "frequentation/sa/2019_2020_2021.html" %}
+                  </div>
+                </div>
+              </div>
+              <div class="div-5" id="sa_freq_15">
+                <div class="graphic">
+                  <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2019, 2020, 2021</p>
+                  <div class="image">
+                    {% include "frequentation/sa/2018_2019_2020_2021.html" %}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="div-2">
-            <div class="button">
-              <div class="freq" onclick="changeStateGCFreq(this)" id="bgc_freq_19">
-                <p>2019</p>
-              </div>
-            </div>
-          </div>
-          <div class="div-3">
-            <div class="button">
-              <div class="freq" onclick="changeStateGCFreq(this)" id="bgc_freq_20">
-                <p>2020</p>
-              </div>
-            </div>
-          </div>
-          <div class="div-4">
-            <div class="button">
-              <div class="freq" onclick="changeStateGCFreq(this)" id="bgc_freq_21">
-                <p>2021</p>
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="gc_freq_1">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant l'année : 2018</p>
-              <div class="image">
-                {% include "frequentation/gc/2018.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="gc_freq_2">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant l'année : 2019</p>
-              <div class="image">
-                {% include "frequentation/gc/2019.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="gc_freq_3">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2019</p>
-              <div class="image">
-                {% include "frequentation/gc/2018_2019.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="gc_freq_4">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant l'année : 2020</p>
-              <div class="image">
-                {% include "frequentation/gc/2020.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="gc_freq_5">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2020</p>
-              <div class="image">
-                {% include "frequentation/gc/2018_2020.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="gc_freq_6">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2019, 2020</p>
-              <div class="image">
-                {% include "frequentation/gc/2019_2020.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="gc_freq_7">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2019, 2020</p>
-              <div class="image">
-                {% include "frequentation/gc/2018_2019_2020.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="gc_freq_8">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant l'année : 2021</p>
-              <div class="image">
-                {% include "frequentation/gc/2021.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="gc_freq_9">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2021</p>
-              <div class="image">
-                {% include "frequentation/gc/2018_2021.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="gc_freq_10">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2019, 2021</p>
-              <div class="image">
-                {% include "frequentation/gc/2019_2021.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="gc_freq_11">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2019, 2021</p>
-              <div class="image">
-                {% include "frequentation/gc/2018_2019_2021.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="gc_freq_12">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2020, 2021</p>
-              <div class="image">
-                {% include "frequentation/gc/2020_2021.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="gc_freq_13">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2020, 2021</p>
-              <div class="image">
-                {% include "frequentation/gc/2018_2020_2021.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="gc_freq_14">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2019, 2020, 2021</p>
-              <div class="image">
-                {% include "frequentation/gc/2019_2020_2021.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="gc_freq_15">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2019, 2020, 2021</p>
-              <div class="image">
-                {% include "frequentation/gc/2018_2019_2020_2021.html" %}
-              </div>
-            </div>
-          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="div-3">
+      <div class="stat">
+        <div class="title">
+          <p>Analyse statistique</p>
+        </div>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="div-4">
+      <div class="stat">
+        <div class="title">
+          <p>Analyse statistique</p>
+        </div>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+          </p>
         </div>
       </div>
     </div>
   </div>
-
-
-
-
-
-  <div class="freqwrapper">
-    <div class="div-7">
-      <div class="graphic">
-        <div class="name">
-          <div class="left">
-          </div>
-          <div class="right">
-          </div>
-        </div>
-        <div class="image">
-        </div>
-      </div>
-    </div>
-    <div class="div-6" id="sa_all">
-      <div class="graphic">
-        <div class="name">
-          <div class="left">
-            <p>Missions de San Antonio</p>
-            <p class="country">San Antonio, Texas, États-Unis</p>
-          </div>
-        </div>
-
-        <div class="choicewrapper">
-          <div class="div-1">
-            <div class="button">
-              <div class="freq" onclick="changeStateSAFreq(this)" id="bsa_freq_18">
-                <p>2018</p>
-              </div>
-            </div>
-          </div>
-          <div class="div-2">
-            <div class="button">
-              <div class="freq" onclick="changeStateSAFreq(this)" id="bsa_freq_19">
-                <p>2019</p>
-              </div>
-            </div>
-          </div>
-          <div class="div-3">
-            <div class="button">
-              <div class="freq" onclick="changeStateSAFreq(this)" id="bsa_freq_20">
-                <p>2020</p>
-              </div>
-            </div>
-          </div>
-          <div class="div-4">
-            <div class="button">
-              <div class="freq" onclick="changeStateSAFreq(this)" id="bsa_freq_21">
-                <p>2021</p>
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="sa_freq_1">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant l'année : 2018</p>
-              <div class="image">
-                {% include "frequentation/sa/2018.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="sa_freq_2">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant l'année : 2019</p>
-              <div class="image">
-                {% include "frequentation/sa/2019.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="sa_freq_3">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2019</p>
-              <div class="image">
-                {% include "frequentation/sa/2018_2019.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="sa_freq_4">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant l'année : 2020</p>
-              <div class="image">
-                {% include "frequentation/sa/2020.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="sa_freq_5">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2020</p>
-              <div class="image">
-                {% include "frequentation/sa/2018_2020.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="sa_freq_6">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2019, 2020</p>
-              <div class="image">
-                {% include "frequentation/sa/2019_2020.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="sa_freq_7">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2019, 2020</p>
-              <div class="image">
-                {% include "frequentation/sa/2018_2019_2020.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="sa_freq_8">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant l'année : 2021</p>
-              <div class="image">
-                {% include "frequentation/sa/2021.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="sa_freq_9">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2021</p>
-              <div class="image">
-                {% include "frequentation/sa/2018_2021.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="sa_freq_10">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2019, 2021</p>
-              <div class="image">
-                {% include "frequentation/sa/2019_2021.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="sa_freq_11">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2019, 2021</p>
-              <div class="image">
-                {% include "frequentation/sa/2018_2019_2021.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="sa_freq_12">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2020, 2021</p>
-              <div class="image">
-                {% include "frequentation/sa/2020_2021.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="sa_freq_13">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2020, 2021</p>
-              <div class="image">
-                {% include "frequentation/sa/2018_2020_2021.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="sa_freq_14">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2019, 2020, 2021</p>
-              <div class="image">
-                {% include "frequentation/sa/2019_2020_2021.html" %}
-              </div>
-            </div>
-          </div>
-          <div class="div-5" id="sa_freq_15">
-            <div class="graphic">
-              <p class="center">Nombre de visiteurs ayant visités le site (par mois) durant les années : 2018, 2019, 2020, 2021</p>
-              <div class="image">
-                {% include "frequentation/sa/2018_2019_2020_2021.html" %}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
 
 
 <script>
