@@ -40,7 +40,7 @@ def df_barplots(dfs, years, column, site, label):
               "2020":"b",
               "2021":"k"}
     px = 1 / plt.rcParams['figure.dpi']
-    fig = plt.figure(figsize=(900*px, 500*px))
+    fig = plt.figure(figsize=(850*px, 500*px))
     for i in range(len(dfs)):
         df = dfs[i]
         line = df[column]

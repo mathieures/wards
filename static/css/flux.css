@@ -11,6 +11,7 @@
 .tabwrapper .stat {
   margin: 15px 0;
   height: 600px;
+  width: 400px;
   border-radius: 15px;
   background-color: white;
   display: flex;
@@ -38,6 +39,22 @@
  justify-content: left;
  margin-left: 20px;
  margin-right: 20px;
+}
+
+.tabwrapper .stat .diagramme {
+ text-align: center;
+ display: flex;
+ justify-content: left;
+ margin-left: 0px;
+ margin-right: 0px;
+ margin-top: -10px;
+ width: 100%;
+ overflow-x: hidden;
+ overflow-y: hidden;
+}
+
+.tabwrapper .stat .diagramme img {
+ margin-top: -30px;
 }
 
 .tabwrapper .stat .content p,a {
