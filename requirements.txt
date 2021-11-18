@@ -1,4 +1,5 @@
 bs4
 xmltodict
 pandas_ods_reader
-
+folium
+unidecode
