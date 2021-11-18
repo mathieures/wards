@@ -28,12 +28,12 @@ def df_barplot_annee(df, year, site):
     bar2 = df["nb_visiteurs"]
     r1 = np.arange(len(bar))
     px = 1 / plt.rcParams['figure.dpi']
-    fig, ax1 = plt.subplots(figsize=(800 * px, 340 * px))
-    ax2 = ax1.twinx()
-    ax1.bar(r1, bar, width=0.6, color='lightskyblue')
-    ax2.plot(bar2, color='g')
-    ax2.set_ylabel('Nb visiteurs', color='g')
-    ax1.set_ylabel('Précipitation', color='lightskyblue')
+    fig, ax2 = plt.subplots(figsize=(800 * px, 340 * px))
+    ax1 = ax2.twinx()
+    ax2.bar(r1, bar2, width=0.6, color='Gainsboro')
+    ax1.plot(bar, color='DeepSkyBlue')
+    ax2.set_ylabel('Nb visiteurs', color='Gray')
+    ax1.set_ylabel('Précipitation', color='DeepSkyBlue')
     ax1.set_ylim(ymin=0, ymax=12)
 
     if site == "sa":
@@ -52,12 +52,12 @@ def barplot_moy_all(df, site):
     bar2 = df["nb_visiteurs"]
     r1 = np.arange(len(bar))
     px = 1 / plt.rcParams['figure.dpi']
-    fig, ax1 = plt.subplots(figsize=(800 * px, 340 * px))
-    ax2 = ax1.twinx()
-    ax1.bar(r1, bar, width=0.6, color='lightskyblue')
-    ax2.plot(bar2, color='g')
-    ax2.set_ylabel('Nb visiteurs', color='g')
-    ax1.set_ylabel('Précipitation', color='lightskyblue')
+    fig, ax2 = plt.subplots(figsize=(800 * px, 340 * px))
+    ax1 = ax2.twinx()
+    ax2.bar(r1, bar2, width=0.6, color='Gainsboro')
+    ax1.plot(bar, color='DeepSkyBlue')
+    ax2.set_ylabel('Nb visiteurs', color='Gray')
+    ax1.set_ylabel('Précipitation', color='DeepSkyBlue')
     ax1.set_ylim(ymin=0, ymax=12)
 
     if site == "sa":

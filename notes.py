@@ -10,7 +10,7 @@ def months_names(string):
     return paire[0]
 
 def notation_months():
-    return ["janv", "févr", "mars", "avr", "mai", "juin", "juil", "aoüt", "sept", "oct", "nov", "déc"]
+    return ["janv", "févr", "mars", "avr", "mai", "juin", "juil", "août", "sept", "oct", "nov", "déc"]
 
 def df_split_by_year(df):
     df['note_moyenne'] = df['note_moyenne'].fillna(0)
