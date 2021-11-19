@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt, mpld3
 import pandas as pd
 
 #Grand Canyon
-df_GC = pd.read_csv("Data/data_grand_canyon.csv", sep=";")
+df_GC = pd.read_csv("datas/data_grand_canyon.csv", sep=";")
 df_GC.drop(df_GC.columns[len(df_GC.columns)-1], axis=1, inplace=True)
 df_GC.drop(df_GC.columns[len(df_GC.columns)-1], axis=1, inplace=True)
 
@@ -11,10 +11,10 @@ df_2019 = df_GC[df_GC["Date"].str.contains('19')]
 df_2020 = df_GC[df_GC["Date"].str.contains('20')]
 df_2021 = df_GC[df_GC["Date"].str.contains('21')]
 
-df_GC_mean = pd.read_csv("Data/mean_grand_canyon.csv", sep=";")
+df_GC_mean = pd.read_csv("datas/mean_grand_canyon.csv", sep=";")
 
 #San Antonio
-df_SA = pd.read_csv("Data/data_san_antonio.csv", sep=";")
+df_SA = pd.read_csv("datas/data_san_antonio.csv", sep=";")
 #df_SA.drop(df_SA.columns[len(df_GC.columns)-1], axis=1, inplace=True)
 #df_SA.drop(df_SA.columns[len(df_GC.columns)-1], axis=1, inplace=True)
 
@@ -23,7 +23,7 @@ df_2019 = df_SA[df_GC["Date"].str.contains('19')]
 df_2020 = df_SA[df_GC["Date"].str.contains('20')]
 df_2021 = df_SA[df_GC["Date"].str.contains('21')]
 
-df_SA_mean = pd.read_csv("Data/mean_san_antonio.csv", sep=";")
+df_SA_mean = pd.read_csv("datas/mean_san_antonio.csv", sep=";")
 
 #====================================================================#
 
