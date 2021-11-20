@@ -130,6 +130,7 @@ body {
   flex-flow: column;
   overflow-x: hidden;
   overflow-y: hidden;
+  background-color : white;
 }
 
 .choicewrapper .graphic .image {
@@ -156,31 +157,33 @@ body {
 }
 
 #bgc_freq_18 {
-    border: solid 2px red;
+    border: solid 4px #dc143c;
 }
 #bgc_freq_19 {
-    border: solid 2px green;
+    border: solid 4px #6495ed;
 }
 #bgc_freq_20 {
-    border: solid 2px blue;
+    border: solid 4px #32cd32;
 }
 #bgc_freq_21 {
-    border: solid 2px black;
+    border: solid 4px #ffff00;
 }
 
 
 #bsa_freq_18 {
-    border: solid 2px red;
+    border: solid 4px #dc143c;
 }
 #bsa_freq_19 {
-    border: solid 2px green;
+    border: solid 4px #6495ed;
 }
 #bsa_freq_20 {
-    border: solid 2px blue;
+    border: solid 4px #32cd32;
 }
 #bsa_freq_21 {
-    border: solid 2px black;
+    border: solid 4px #ffff00;
 }
+
+
 
 .choicewrapper .div-10 {
   grid-column: 2;
@@ -201,6 +204,7 @@ body {
 .choicewrapper .div-5 {
   grid-column: 1 / span 3;
   grid-row: 2;
+  background-color : white;
 }
 .choicewrapper .div-6 {
   grid-column: 1 / span 3;

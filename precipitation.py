@@ -22,13 +22,11 @@ def df_split_by_year(df):
 
 
 def df_barplot_annee(df, year, site):
-    title = "Année " + str(year)
-
     bar = df["Pluie"]
     bar2 = df["nb_visiteurs"]
     r1 = np.arange(len(bar))
     px = 1 / plt.rcParams['figure.dpi']
-    fig, ax2 = plt.subplots(figsize=(800 * px, 340 * px))
+    fig, ax2 = plt.subplots(figsize=(860 * px, 340 * px))
     ax1 = ax2.twinx()
     ax2.bar(r1, bar2, width=0.6, color='Gainsboro')
     ax1.plot(bar, color='DeepSkyBlue')
@@ -37,22 +35,22 @@ def df_barplot_annee(df, year, site):
     ax1.set_ylim(ymin=0, ymax=12)
 
     if site == "sa":
-        ax2.set_ylim(ymin=0, ymax=100)
+        ax2.set_ylim(ymin=0, ymax=80)
     else:
         ax2.set_ylim(ymin=0, ymax=6000)
 
     plt.xticks([r for r in range(len(bar))], notation_months())
-    plt.title(title)
+    # plt.title("Année " + str(year))
+    plt.title("Nombre de visiteurs et température (par mois) durant l'année : " + str(year))
     name_save = "static/graphics/precipitation/" + site + "/" + str(year) + ".png"
     plt.savefig(name_save)
 
 def barplot_moy_all(df, site):
-
     bar = df["Pluie"]
     bar2 = df["nb_visiteurs"]
     r1 = np.arange(len(bar))
     px = 1 / plt.rcParams['figure.dpi']
-    fig, ax2 = plt.subplots(figsize=(800 * px, 340 * px))
+    fig, ax2 = plt.subplots(figsize=(860 * px, 340 * px))
     ax1 = ax2.twinx()
     ax2.bar(r1, bar2, width=0.6, color='Gainsboro')
     ax1.plot(bar, color='DeepSkyBlue')
@@ -61,11 +59,12 @@ def barplot_moy_all(df, site):
     ax1.set_ylim(ymin=0, ymax=12)
 
     if site == "sa":
-        ax2.set_ylim(ymin=0, ymax=100)
+        ax2.set_ylim(ymin=0, ymax=80)
     else:
         ax2.set_ylim(ymin=0, ymax=6000)
     plt.xticks([r for r in range(len(bar))], notation_months())
 
+    plt.title("Nombre de visiteurs moyen et température moyenne (par mois)\ndurant les années : 2018, 2019, 2020, 2021")
     name_save = "static/graphics/precipitation/" + site + "/" + "all.png"
     plt.savefig(name_save)
 
