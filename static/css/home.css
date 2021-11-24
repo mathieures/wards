@@ -38,7 +38,7 @@
   color: black;
 }
 
-.homewrapper .content {
+.homewrapper .contentHome {
  margin-right: 40px;
  text-align: justify;
  display: flex;
@@ -47,7 +47,7 @@
  margin-left: 40px
 }
 
-.homewrapper .content p,a {
+.homewrapper .contentHome p,a {
   font-family: 'Roboto', Calibri, serif;
   font-style: normal;
   font-weight: 500;
