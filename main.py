@@ -16,8 +16,8 @@ def read_file(filename):
 # Chargement des fichiers en dataframe
 df_gc = read_file('datas/data_grand_canyon.csv')
 df_sa = read_file('datas/data_san_antonio.csv')
-df_pays_gc = pd.read_csv('datas/pays_origine_GC.csv')
-df_pays_sa = pd.read_csv('datas/pays_origine_SA.csv')
+df_pays_gc = read_file('datas/pays_origine_GC.csv')
+df_pays_sa = read_file('datas/pays_origine_SA.csv')
 
 # Partie des notes
 dfs_gc = notes.df_split_by_year(df_gc)
@@ -137,18 +137,25 @@ def note():
                            mean_sa_all=mean_sa_all
                            )
 
-# Page à propos
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
-
-
 
 # Page météo (avec températures et précipitations)
 @app.route('/meteo')
 def meteo():
-    return render_template('meteo.html')
+    pearson_coeff_temp_gc,p_value_temp_gc = temperature.test_correlation(df_gc["nb_visiteurs"], df_gc["Temp"])
+    pearson_coeff_prec_gc,p_value_prec_gc = precipitation.test_correlation(df_gc["nb_visiteurs"], df_gc["Pluie"])
+
+    pearson_coeff_temp_sa,p_value_temp_sa = temperature.test_correlation(df_sa["nb_visiteurs"], df_sa["Temp"])
+    pearson_coeff_prec_sa,p_value_prec_sa = precipitation.test_correlation(df_sa["nb_visiteurs"], df_sa["Pluie"])
+
+    return render_template('meteo.html',
+                           pearson_coeff_temp_gc=pearson_coeff_temp_gc,
+                           p_value_temp_gc=p_value_temp_gc,
+                           pearson_coeff_prec_gc=pearson_coeff_prec_gc,
+                           p_value_prec_gc=p_value_prec_gc,
+                           pearson_coeff_temp_sa=pearson_coeff_temp_sa,
+                           p_value_temp_sa=p_value_temp_sa,
+                           pearson_coeff_prec_sa=pearson_coeff_prec_sa,
+                           p_value_prec_sa=p_value_prec_sa)
 
 
 @app.route('/frequentation')
@@ -158,4 +165,8 @@ def frequentation():
 
 @app.route('/flux')
 def flux():
-    return render_template('flux.html')
+    somme_gc = df_pays_gc["nb_visiteurs"].sum()
+    somme_sa = df_pays_sa["nb_visiteurs"].sum()
+    return render_template('flux.html',
+                           somme_gc=somme_gc,
+                           somme_sa=somme_sa)

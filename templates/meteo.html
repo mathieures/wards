@@ -504,14 +504,122 @@
       </div>
     </div>
     <div class="div-3">
+      <div class="test">
+        <div class="title">
+          <p>Test de corrélation</p>
+        </div>
+        <div class="content">
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">Nombre de visiteurs ~ Température</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>pearson_coeff</td>
+                <td>{{ pearson_coeff_temp_gc }}</td>
+              </tr>
+              <tr>
+                <td>p-value</td>
+                <td>{{ p_value_temp_gc }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">Nombre de visiteurs ~ Précipitation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>pearson_coeff</td>
+                <td>{{ pearson_coeff_prec_gc }}</td>
+              </tr>
+              <tr>
+                <td>p-value</td>
+                <td>{{ p_value_prec_gc }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">~ signifie "en fonction de"</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
       <div class="stat">
         <div class="title">
           <p>Analyse statistique</p>
         </div>
         <div class="content">
-          <p>Corrélation négative entre la pluie et la fréquentation pour San Antonio (-0,3)<br/><br/>
+          <p>
             Faible corrélation négative entre la température et la fréquentation pour le Grand Canyon
-            
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="div-4">
+      <div class="test">
+        <div class="title">
+          <p>Test de corrélation</p>
+        </div>
+        <div class="content">
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">Nombre de visiteurs ~ Température</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>pearson_coeff</td>
+                <td>{{ pearson_coeff_temp_sa }}</td>
+              </tr>
+              <tr>
+                <td>p-value</td>
+                <td>{{ p_value_temp_sa }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">Nombre de visiteurs ~ Précipitation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>pearson_coeff</td>
+                <td>{{ pearson_coeff_prec_sa }}</td>
+              </tr>
+              <tr>
+                <td>p-value</td>
+                <td>{{ p_value_prec_sa }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">~ signifie "en fonction de"</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+      <div class="stat">
+        <div class="title">
+          <p>Analyse statistique</p>
+        </div>
+        <div class="content">
+          <p>
+            Corrélation négative entre la pluie et la fréquentation pour San Antonio (-0,3).<br/><br/>
+            Plus la précipitation augmente, moins il y a de visiteurs et inversement.
           </p>
         </div>
       </div>

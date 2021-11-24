@@ -1,27 +1,27 @@
-,Nombre de visiteurs
-United States,719
-Canada,27
-Brazil,12
-Tunisia,7
-Germany,9
-France,44
-Russia,4
-Japan,6
-Italy,6
-India,2
-Spain,3
-United Kingdom,25
-Australia,5
-Belgium,1
-Taiwan,1
-Czechia,1
-Netherlands,5
-Puerto Rico,1
-Uruguay,1
-Switzerland,1
-Portugal,2
-Mexico,12
-Philippines,2
-Norway,1
-Colombia,1
-Chile,1
+pays;nb_visiteurs
+United States;719
+Canada;27
+Brazil;12
+Tunisia;7
+Germany;9
+France;44
+Russia;4
+Japan;6
+Italy;6
+India;2
+Spain;3
+United Kingdom;25
+Australia;5
+Belgium;1
+Taiwan;1
+Czechia;1
+Netherlands;5
+Puerto Rico;1
+Uruguay;1
+Switzerland;1
+Portugal;2
+Mexico;12
+Philippines;2
+Norway;1
+Colombia;1
+Chile;1

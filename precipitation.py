@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from notes import months_names, notation_months
+from scipy.stats import pearsonr
 
 def df_split_by_year(df):
     df2018 = df.iloc[0:12]
@@ -30,8 +31,8 @@ def df_barplot_annee(df, year, site):
     ax1 = ax2.twinx()
     ax2.bar(r1, bar2, width=0.6, color='Gainsboro')
     ax1.plot(bar, color='DeepSkyBlue')
-    ax2.set_ylabel('Nb visiteurs', color='Gray')
-    ax1.set_ylabel('Précipitation', color='DeepSkyBlue')
+    ax2.set_ylabel('Nombre de visiteurs', color='Gray')
+    ax1.set_ylabel('Précipitation (en mm)', color='DeepSkyBlue')
     ax1.set_ylim(ymin=0, ymax=12)
 
     if site == "sa":
@@ -54,8 +55,8 @@ def barplot_moy_all(df, site):
     ax1 = ax2.twinx()
     ax2.bar(r1, bar2, width=0.6, color='Gainsboro')
     ax1.plot(bar, color='DeepSkyBlue')
-    ax2.set_ylabel('Nb visiteurs', color='Gray')
-    ax1.set_ylabel('Précipitation', color='DeepSkyBlue')
+    ax2.set_ylabel('Nombre de visiteurs', color='Gray')
+    ax1.set_ylabel('Précipitation (en mm)', color='DeepSkyBlue')
     ax1.set_ylim(ymin=0, ymax=12)
 
     if site == "sa":
@@ -93,3 +94,6 @@ def mean_all(dfs):
         df = df.append({"Date": months[i], "Pluie": round(mean_of_means, 2), "nb_visiteurs": round(mean_of_means_visit, 2)}, ignore_index=True)
     return df
 
+def test_correlation(colonne1, colonne2):
+    pearson_coeff,p_value = pearsonr(colonne1,colonne2)
+    return '{:.3f}'.format(pearson_coeff),'{:.3f}'.format(p_value)
