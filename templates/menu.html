@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Projet-integre</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="sidenav">
+        <div class="container">
+            <a href="{{ url_for('index') }}">
+                <div class="content">
+                    <i class="fa fa-home" aria-hidden="true"></i>Accueil
+                </div>
+            </a>
+            <a href="{{ url_for('flux') }}">
+                <div class="content">
+                    <i class="fa fa-globe" aria-hidden="true"></i>Flux
+                </div>
+            </a>
+            <a href="{{ url_for('frequentation') }}">
+                <div class="content">
+                    <i class="fa fa-line-chart" aria-hidden="true"></i>Fréquentation
+                </div>
+            </a>
+            <a href="{{ url_for('meteo') }}">
+                <div class="content">
+                    <i class="fa fa-sun-o" aria-hidden="true"></i>Météo
+                </div>
+            </a>
+            <a href="{{ url_for('note') }}">
+                <div class="content">
+                    <i class="fa fa-star-o" aria-hidden="true"></i>Note
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="main">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

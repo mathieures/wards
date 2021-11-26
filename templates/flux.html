@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flux</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/flux.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/graphics_flux.css') }}">
+</head>
+
+<body id="body">
+{% extends "menu.html" %}
+
+{% block content %}
+  <div class="tabwrapper">
+    <div class="div-1">
+      <div class="fluxwrapper">
+        <div class="div-1">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+              </div>
+              <div class="right">
+              </div>
+            </div>
+            <div class="image">
+            </div>
+          </div>
+        </div>
+        <div class="div-2">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+                <p>Grand Canyon</p>
+                <p class="country">Arizona, États-Unis</p>
+              </div>
+            </div>
+            <div class="choicewrapper">
+            <div class="div-1">
+              <div class="graphic">
+                {% include "flux/GC.html" %}
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="div-2">
+      <div class="fluxwrapper">
+        <div class="div-1">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+              </div>
+              <div class="right">
+              </div>
+            </div>
+            <div class="image">
+            </div>
+          </div>
+        </div>
+        <div class="div-2">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+                <p>Missions de San Antonio</p>
+                <p class="country">San Antonio, Texas, États-Unis</p>
+              </div>
+            </div>
+            <div class="choicewrapper">
+            <div class="div-1">
+              <div class="graphic">
+                {% include "flux/SA.html" %}
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="div-3">
+      <div class="stat">
+        <div class="title">
+          <p>Représentation des flux principaux</p>
+        </div>
+        <div class="diagramme">
+          <img src="static/graphics/flux/Camembert_GC.png" width="400px">
+        </div>
+        <div class="content">
+          <p>Top 5 des pays de provenance des visiteurs du Grand Canyon<br/>
+            - Données de TripAdvisor uniquement.<br/>
+            - Échantillon de {{ somme_gc }} observations.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="div-4">
+      <div class="stat">
+        <div class="title">
+          <p>Représentation des flux principaux</p>
+        </div>
+        <div class="diagramme">
+          <img src="static/graphics/flux/Camembert_SA.png" width="400px">
+        </div>
+        <div class="content">
+          <p>Top 5 des pays de provenance des visiteurs des missions de San Antonio.<br/>
+            - Données de TripAdvisor uniquement.<br/>
+            - Échantillon de {{ somme_sa }} observations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+</body>
+</html>

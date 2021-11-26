@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Note</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/graphics_note.css') }}">
+</head>
+<body>
+{% extends "menu.html" %}
+{% block content %}
+  <div class="notewrapper">
+    <div class="div-1">
+      <div class="button" onclick="changeGraphic(this)" id="b_all">
+        <p>Moyenne</p>
+      </div>
+    </div>
+    <div class="div-2">
+      <div class="button" onclick="changeGraphic(this)" id="b_2018">
+        <p>2018</p>
+      </div>
+    </div>
+    <div class="div-3">
+      <div class="button" onclick="changeGraphic(this)" id="b_2019">
+        <p>2019</p>
+      </div>
+    </div>
+    <div class="div-4">
+      <div class="button" onclick="changeGraphic(this)" id="b_2020">
+        <p>2020</p>
+      </div>
+    </div>
+    <div class="div-5">
+      <div class="button" onclick="changeGraphic(this)" id="b_2021">
+        <p>2021</p>
+      </div>
+    </div>
+    <div class="div-7">
+      <div class="graphic">
+        <div class="name">
+          <div class="left">
+          </div>
+          <div class="right">
+          </div>
+        </div>
+        <div class="image">
+        </div>
+      </div>
+    </div>
+    <div class="div-6" id="2018">
+      <div class="graphic">
+        <div class="name">
+          <div class="left">
+            <p>Grand Canyon - {{ mean_gc_2018 }}</p>
+            <i class="fa fa-star fa-2x" aria-hidden="true" ></i>
+          </div>
+          <div class="right">
+            <i class="fa fa-star fa-2x" aria-hidden="true" ></i>
+            <p>{{ mean_sa_2018 }} - Missions de San Antonio</p>
+          </div>
+        </div>
+        <div class="image">
+          <img src="{{url_for('static', filename='graphics/note/2018.png')}}" align="middle"/>
+        </div>
+      </div>
+    </div>
+    <div class="div-6" id="2019">
+      <div class="graphic">
+        <div class="name">
+          <div class="left">
+            <p>Grand Canyon - {{ mean_gc_2019 }}</p>
+            <i class="fa fa-star fa-2x" aria-hidden="true" ></i>
+          </div>
+          <div class="right">
+            <i class="fa fa-star fa-2x" aria-hidden="true" ></i>
+            <p>{{ mean_sa_2019 }} - Missions de San Antonio</p>
+          </div>
+        </div>
+        <div class="image">
+          <img src="{{url_for('static', filename='graphics/note/2019.png')}}" align="middle"/>
+        </div>
+      </div>
+    </div>
+    <div class="div-6" id="2020">
+      <div class="graphic">
+        <div class="name">
+          <div class="left">
+            <p>Grand Canyon - {{ mean_gc_2020 }}</p>
+            <i class="fa fa-star fa-2x" aria-hidden="true" ></i>
+          </div>
+          <div class="right">
+            <i class="fa fa-star fa-2x" aria-hidden="true" ></i>
+            <p>{{ mean_sa_2020 }} - Missions de San Antonio</p>
+          </div>
+        </div>
+        <div class="image">
+          <img src="{{url_for('static', filename='graphics/note/2020.png')}}" align="middle"/>
+        </div>
+      </div>
+    </div>
+    <div class="div-6" id="2021">
+      <div class="graphic">
+        <div class="name">
+          <div class="left">
+            <p>Grand Canyon - {{ mean_gc_2021 }}</p>
+            <i class="fa fa-star fa-2x" aria-hidden="true" ></i>
+          </div>
+          <div class="right">
+            <i class="fa fa-star fa-2x" aria-hidden="true" ></i>
+            <p>{{ mean_sa_2021 }} - Missions de San Antonio</p>
+          </div>
+        </div>
+        <div class="image">
+          <img src="{{url_for('static', filename='graphics/note/2021.png')}}" align="middle"/>
+        </div>
+      </div>
+    </div>
+    <div class="div-6" id="all">
+      <div class="graphic">
+        <div class="name">
+          <div class="left">
+            <p>Grand Canyon - {{ mean_gc_all }}</p>
+            <i class="fa fa-star fa-2x" aria-hidden="true" ></i>
+          </div>
+          <div class="right">
+            <i class="fa fa-star fa-2x" aria-hidden="true" ></i>
+            <p>{{ mean_sa_all }} - Missions de San Antonio</p>
+          </div>
+        </div>
+        <div class="image">
+          <img src="{{url_for('static', filename='graphics/note/all.png')}}" align="middle"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  function changeGraphic(element){
+	  var years = ['all', '2018','2019','2020','2021'];
+	  var butt = element.id;
+    var graph = String(butt).substring(2);
+    var y = document.getElementById(String(butt));
+    y.style.backgroundColor = "white";
+    for (var i = 0; i < years.length; i++) {
+      var x = document.getElementById(String(years[i]));
+      if(graph.includes(String(years[i]))){
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        }
+      }else{
+        var y = document.getElementById(String('b_' + years[i]));
+        if (x.style.display != "none") {
+          x.style.display = "none";
+          y.style.backgroundColor = "#EBECFF";
+        }
+      }
+    }
+  }
+</script>
+{% endblock %}
+</body>
+</html>

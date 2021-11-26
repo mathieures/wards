@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Météo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/meteo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/graphics_meteo.css') }}">
+</head>
+<body>
+{% extends "menu.html" %}
+{% block content %}
+  <div class="tabwrapper">
+    <div class="div-1">
+      <div class="meteowrapper">
+        <div class="div-1">
+          <div class="button" onclick="changeGraphicGC(this)" id="bgc_all">
+            <p>Moyenne</p>
+          </div>
+        </div>
+        <div class="div-2">
+          <div class="button" onclick="changeGraphicGC(this)" id="bgc_2018">
+            <p>2018</p>
+          </div>
+        </div>
+        <div class="div-3">
+          <div class="button" onclick="changeGraphicGC(this)" id="bgc_2019">
+            <p>2019</p>
+          </div>
+        </div>
+        <div class="div-4">
+          <div class="button" onclick="changeGraphicGC(this)" id="bgc_2020">
+            <p>2020</p>
+          </div>
+        </div>
+        <div class="div-5">
+          <div class="button" onclick="changeGraphicGC(this)" id="bgc_2021">
+            <p>2021</p>
+          </div>
+        </div>
+        <div class="div-7">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+              </div>
+              <div class="right">
+              </div>
+            </div>
+            <div class="image">
+            </div>
+          </div>
+        </div>
+        <div class="div-6" id="gc_2018">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+                <p>Grand Canyon</p>
+                <p class="country">Arizona, États-Unis</p>
+              </div>
+            </div>
+
+            <div class="choicewrapper">
+              <div class="div-1">
+                <div class="button">
+                  <div class="temp" onclick="changeMeteoGC2018(this)" id="bgc_temp_2018">
+                    <i class="fa fa-thermometer-empty fa-2x" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-2">
+                <div class="button">
+                  <div class="prec" onclick="changeMeteoGC2018(this)" id="bgc_prec_2018">
+                    <i class="fa fa-tint fa-2x" aria-hidden="true" ></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="gc_prec_2018">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/precipitation/gc/2018.png')}}" align="middle"/>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="gc_temp_2018">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/temperature/gc/2018.png')}}" align="middle"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="div-6" id="gc_2019">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+                <p>Grand Canyon</p>
+                <p class="country">Arizona, États-Unis</p>
+              </div>
+            </div>
+
+            <div class="choicewrapper">
+              <div class="div-1">
+                <div class="button">
+                  <div class="temp" onclick="changeMeteoGC2019(this)" id="bgc_temp_2019">
+                    <i class="fa fa-thermometer-empty fa-2x" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-2">
+                <div class="button">
+                  <div class="prec" onclick="changeMeteoGC2019(this)" id="bgc_prec_2019">
+                    <i class="fa fa-tint fa-2x" aria-hidden="true" ></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="gc_prec_2019">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/precipitation/gc/2019.png')}}" align="middle"/>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="gc_temp_2019">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/temperature/gc/2019.png')}}" align="middle"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="div-6" id="gc_2020">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+                <p>Grand Canyon</p>
+                <p class="country">Arizona, États-Unis</p>
+              </div>
+            </div>
+
+            <div class="choicewrapper">
+              <div class="div-1">
+                <div class="button">
+                  <div class="temp" onclick="changeMeteoGC2020(this)" id="bgc_temp_2020">
+                    <i class="fa fa-thermometer-empty fa-2x" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-2">
+                <div class="button">
+                  <div class="prec" onclick="changeMeteoGC2020(this)" id="bgc_prec_2020">
+                    <i class="fa fa-tint fa-2x" aria-hidden="true" ></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="gc_prec_2020">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/precipitation/gc/2020.png')}}" align="middle"/>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="gc_temp_2020">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/temperature/gc/2020.png')}}" align="middle"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="div-6" id="gc_2021">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+                <p>Grand Canyon</p>
+                <p class="country">Arizona, États-Unis</p>
+              </div>
+            </div>
+
+            <div class="choicewrapper">
+              <div class="div-1">
+                <div class="button">
+                  <div class="temp" onclick="changeMeteoGC2021(this)" id="bgc_temp_2021">
+                    <i class="fa fa-thermometer-empty fa-2x" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-2">
+                <div class="button">
+                  <div class="prec" onclick="changeMeteoGC2021(this)" id="bgc_prec_2021">
+                    <i class="fa fa-tint fa-2x" aria-hidden="true" ></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="gc_prec_2021">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/precipitation/gc/2021.png')}}" align="middle"/>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="gc_temp_2021">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/temperature/gc/2021.png')}}" align="middle"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="div-6" id="gc_all">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+                <p>Grand Canyon</p>
+                <p class="country">Arizona, États-Unis</p>
+              </div>
+            </div>
+
+            <div class="choicewrapper">
+              <div class="div-1">
+                <div class="button">
+                  <div class="temp" onclick="changeMeteoGCAll(this)" id="bgc_temp_all">
+                    <i class="fa fa-thermometer-empty fa-2x" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-2">
+                <div class="button">
+                  <div class="prec" onclick="changeMeteoGCAll(this)" id="bgc_prec_all">
+                    <i class="fa fa-tint fa-2x" aria-hidden="true" ></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="gc_prec_all">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/precipitation/gc/all.png')}}" align="middle"/>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="gc_temp_all">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/temperature/gc/all.png')}}" align="middle"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="div-2">
+      <div class="meteowrapper">
+        <div class="div-1">
+          <div class="button" onclick="changeGraphicSA(this)" id="bsa_all">
+            <p>Moyenne</p>
+          </div>
+        </div>
+        <div class="div-2">
+          <div class="button" onclick="changeGraphicSA(this)" id="bsa_2018">
+            <p>2018</p>
+          </div>
+        </div>
+        <div class="div-3">
+          <div class="button" onclick="changeGraphicSA(this)" id="bsa_2019">
+            <p>2019</p>
+          </div>
+        </div>
+        <div class="div-4">
+          <div class="button" onclick="changeGraphicSA(this)" id="bsa_2020">
+            <p>2020</p>
+          </div>
+        </div>
+        <div class="div-5">
+          <div class="button" onclick="changeGraphicSA(this)" id="bsa_2021">
+            <p>2021</p>
+          </div>
+        </div>
+        <div class="div-7">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+              </div>
+              <div class="right">
+              </div>
+            </div>
+            <div class="image">
+            </div>
+          </div>
+        </div>
+        <div class="div-6" id="sa_2018">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+                <p>Missions de San Antonio</p>
+                <p class="country">San Antonio, Texas, États-Unis</p>
+              </div>
+            </div>
+
+            <div class="choicewrapper">
+              <div class="div-1">
+                <div class="button">
+                  <div class="temp" onclick="changeMeteoSA2018(this)" id="bsa_temp_2018">
+                    <i class="fa fa-thermometer-empty fa-2x" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-2">
+                <div class="button">
+                  <div class="prec" onclick="changeMeteoSA2018(this)" id="bsa_prec_2018">
+                    <i class="fa fa-tint fa-2x" aria-hidden="true" ></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="sa_prec_2018">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/precipitation/sa/2018.png')}}" align="middle"/>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="sa_temp_2018">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/temperature/sa/2018.png')}}" align="middle" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="div-6" id="sa_2019">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+                <p>Missions de San Antonio</p>
+                <p class="country">San Antonio, Texas, États-Unis</p>
+              </div>
+            </div>
+
+            <div class="choicewrapper">
+              <div class="div-1">
+                <div class="button">
+                  <div class="temp" onclick="changeMeteoSA2019(this)" id="bsa_temp_2019">
+                    <i class="fa fa-thermometer-empty fa-2x" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-2">
+                <div class="button">
+                  <div class="prec" onclick="changeMeteoSA2019(this)" id="bsa_prec_2019">
+                    <i class="fa fa-tint fa-2x" aria-hidden="true" ></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="sa_prec_2019">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/precipitation/sa/2019.png')}}" align="middle"/>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="sa_temp_2019">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/temperature/sa/2019.png')}}" align="middle"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="div-6" id="sa_2020">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+                <p>Missions de San Antonio</p>
+                <p class="country">San Antonio, Texas, États-Unis</p>
+              </div>
+            </div>
+
+            <div class="choicewrapper">
+              <div class="div-1">
+                <div class="button">
+                  <div class="temp" onclick="changeMeteoSA2020(this)" id="bsa_temp_2020">
+                    <i class="fa fa-thermometer-empty fa-2x" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-2">
+                <div class="button">
+                  <div class="prec" onclick="changeMeteoSA2020(this)" id="bsa_prec_2020">
+                    <i class="fa fa-tint fa-2x" aria-hidden="true" ></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="sa_prec_2020">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/precipitation/sa/2020.png')}}" align="middle"/>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="sa_temp_2020">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/temperature/sa/2020.png')}}" align="middle"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="div-6" id="sa_2021">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+                <p>Missions de San Antonio</p>
+                <p class="country">San Antonio, Texas, États-Unis</p>
+              </div>
+            </div>
+
+            <div class="choicewrapper">
+              <div class="div-1">
+                <div class="button">
+                  <div class="temp" onclick="changeMeteoSA2021(this)" id="bsa_temp_2021">
+                    <i class="fa fa-thermometer-empty fa-2x" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-2">
+                <div class="button">
+                  <div class="prec" onclick="changeMeteoSA2021(this)" id="bsa_prec_2021">
+                    <i class="fa fa-tint fa-2x" aria-hidden="true" ></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="sa_prec_2021">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/precipitation/sa/2021.png')}}" align="middle"/>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="sa_temp_2021">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/temperature/sa/2021.png')}}" align="middle" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="div-6" id="sa_all">
+          <div class="graphic">
+            <div class="name">
+              <div class="left">
+                <p>Missions de San Antonio</p>
+                <p class="country">San Antonio, Texas, États-Unis</p>
+              </div>
+            </div>
+
+            <div class="choicewrapper">
+              <div class="div-1">
+                <div class="button">
+                  <div class="temp" onclick="changeMeteoSAAll(this)" id="bsa_temp_all">
+                    <i class="fa fa-thermometer-empty fa-2x" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-2">
+                <div class="button">
+                  <div class="prec" onclick="changeMeteoSAAll(this)" id="bsa_prec_all">
+                    <i class="fa fa-tint fa-2x" aria-hidden="true" ></i>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="sa_prec_all">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/precipitation/sa/all.png')}}" align="middle"/>
+                  </div>
+                </div>
+              </div>
+              <div class="div-3" id="sa_temp_all">
+                <div class="graphic">
+                  <div class="image">
+                    <img src="{{url_for('static', filename='graphics/temperature/sa/all.png')}}" align="middle"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="div-3">
+      <div class="test">
+        <div class="title">
+          <p>Test de corrélation</p>
+        </div>
+        <div class="content">
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">Nombre de visiteurs ~ Température</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>pearson_coeff</td>
+                <td>{{ pearson_coeff_temp_gc }}</td>
+              </tr>
+              <tr>
+                <td>p-value</td>
+                <td>{{ p_value_temp_gc }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">Nombre de visiteurs ~ Précipitation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>pearson_coeff</td>
+                <td>{{ pearson_coeff_prec_gc }}</td>
+              </tr>
+              <tr>
+                <td>p-value</td>
+                <td>{{ p_value_prec_gc }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">~ signifie "en fonction de"</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+      <div class="stat">
+        <div class="title">
+          <p>Analyse statistique</p>
+        </div>
+        <div class="content">
+          <p>
+            Faible corrélation négative entre la température et la fréquentation pour le Grand Canyon
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="div-4">
+      <div class="test">
+        <div class="title">
+          <p>Test de corrélation</p>
+        </div>
+        <div class="content">
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">Nombre de visiteurs ~ Température</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>pearson_coeff</td>
+                <td>{{ pearson_coeff_temp_sa }}</td>
+              </tr>
+              <tr>
+                <td>p-value</td>
+                <td>{{ p_value_temp_sa }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">Nombre de visiteurs ~ Précipitation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>pearson_coeff</td>
+                <td>{{ pearson_coeff_prec_sa }}</td>
+              </tr>
+              <tr>
+                <td>p-value</td>
+                <td>{{ p_value_prec_sa }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">~ signifie "en fonction de"</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+      <div class="stat">
+        <div class="title">
+          <p>Analyse statistique</p>
+        </div>
+        <div class="content">
+          <p>
+            Corrélation négative entre la pluie et la fréquentation pour San Antonio (-0,3).<br/><br/>
+            Plus la précipitation augmente, moins il y a de visiteurs et inversement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  function changeGraphicGC(element){
+	  var years = ['gc_all', 'gc_2018','gc_2019','gc_2020','gc_2021'];
+	  var butt = element.id;
+    var graph = String(butt).substring(1);
+    var y = document.getElementById(String(butt));
+    y.style.backgroundColor = "white";
+    for (var i = 0; i < years.length; i++) {
+      var x = document.getElementById(String(years[i]));
+      if(years[i].includes(String(graph))){
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        }
+      }else{
+        var y = document.getElementById(String('b' + years[i]));
+        if (x.style.display != "none") {
+          x.style.display = "none";
+          y.style.backgroundColor = "#EBECFF";
+        }
+      }
+    }
+  }
+
+  function changeMeteoGCAll(element){
+    var meteos = ['gc_temp_all', 'gc_prec_all'];
+	  var butt = element.id;
+    var graph = String(butt).substring(1);
+    var y = document.getElementById(String(butt));
+    y.style.backgroundColor = "#E5E5E5";
+    for (var i = 0; i < meteos.length; i++) {
+      var x = document.getElementById(String(meteos[i]));
+      if(meteos[i].includes(String(graph))){
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        }
+      }else{
+        var y = document.getElementById(String('b' + meteos[i]));
+        if (x.style.display != "none") {
+          x.style.display = "none";
+          y.style.backgroundColor = "white";
+        }
+      }
+    }
+  }
+
+  function changeMeteoGC2018(element){
+    var meteos = ['gc_temp_2018', 'gc_prec_2018'];
+	  var butt = element.id;
+    var graph = String(butt).substring(1);
+    var y = document.getElementById(String(butt));
+    y.style.backgroundColor = "#E5E5E5";
+    for (var i = 0; i < meteos.length; i++) {
+      var x = document.getElementById(String(meteos[i]));
+      if(meteos[i].includes(String(graph))){
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        }
+      }else{
+        var y = document.getElementById(String('b' + meteos[i]));
+        if (x.style.display != "none") {
+          x.style.display = "none";
+          y.style.backgroundColor = "white";
+        }
+      }
+    }
+  }
+
+  function changeMeteoGC2019(element){
+    var meteos = ['gc_temp_2019', 'gc_prec_2019'];
+	  var butt = element.id;
+    var graph = String(butt).substring(1);
+    var y = document.getElementById(String(butt));
+    y.style.backgroundColor = "#E5E5E5";
+    for (var i = 0; i < meteos.length; i++) {
+      var x = document.getElementById(String(meteos[i]));
+      if(meteos[i].includes(String(graph))){
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        }
+      }else{
+        var y = document.getElementById(String('b' + meteos[i]));
+        if (x.style.display != "none") {
+          x.style.display = "none";
+          y.style.backgroundColor = "white";
+        }
+      }
+    }
+  }
+
+  function changeMeteoGC2020(element){
+    var meteos = ['gc_temp_2020', 'gc_prec_2020'];
+	  var butt = element.id;
+    var graph = String(butt).substring(1);
+    var y = document.getElementById(String(butt));
+    y.style.backgroundColor = "#E5E5E5";
+    for (var i = 0; i < meteos.length; i++) {
+      var x = document.getElementById(String(meteos[i]));
+      if(meteos[i].includes(String(graph))){
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        }
+      }else{
+        var y = document.getElementById(String('b' + meteos[i]));
+        if (x.style.display != "none") {
+          x.style.display = "none";
+          y.style.backgroundColor = "white";
+        }
+      }
+    }
+  }
+
+  function changeMeteoGC2021(element){
+    var meteos = ['gc_temp_2021', 'gc_prec_2021'];
+	  var butt = element.id;
+    var graph = String(butt).substring(1);
+    var y = document.getElementById(String(butt));
+    y.style.backgroundColor = "#E5E5E5";
+    for (var i = 0; i < meteos.length; i++) {
+      var x = document.getElementById(String(meteos[i]));
+      if(meteos[i].includes(String(graph))){
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        }
+      }else{
+        var y = document.getElementById(String('b' + meteos[i]));
+        if (x.style.display != "none") {
+          x.style.display = "none";
+          y.style.backgroundColor = "white";
+        }
+      }
+    }
+  }
+
+  function changeGraphicSA(element){
+	  var years = ['sa_all', 'sa_2018','sa_2019','sa_2020','sa_2021'];
+	  var butt = element.id;
+    var graph = String(butt).substring(1);
+    var y = document.getElementById(String(butt));
+    y.style.backgroundColor = "white";
+    for (var i = 0; i < years.length; i++) {
+      var x = document.getElementById(String(years[i]));
+      if(years[i].includes(String(graph))){
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        }
+      }else{
+        var y = document.getElementById(String('b' + years[i]));
+        if (x.style.display != "none") {
+          x.style.display = "none";
+          y.style.backgroundColor = "#EBECFF";
+        }
+      }
+    }
+  }
+
+
+
+
+  function changeMeteoSAAll(element){
+    var meteos = ['sa_temp_all', 'sa_prec_all'];
+	  var butt = element.id;
+    var graph = String(butt).substring(1);
+    var y = document.getElementById(String(butt));
+    y.style.backgroundColor = "#E5E5E5";
+    for (var i = 0; i < meteos.length; i++) {
+      var x = document.getElementById(String(meteos[i]));
+      if(meteos[i].includes(String(graph))){
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        }
+      }else{
+        var y = document.getElementById(String('b' + meteos[i]));
+        if (x.style.display != "none") {
+          x.style.display = "none";
+          y.style.backgroundColor = "white";
+        }
+      }
+    }
+  }
+
+  function changeMeteoSA2018(element){
+    var meteos = ['sa_temp_2018', 'sa_prec_2018'];
+	  var butt = element.id;
+    var graph = String(butt).substring(1);
+    var y = document.getElementById(String(butt));
+    y.style.backgroundColor = "#E5E5E5";
+    for (var i = 0; i < meteos.length; i++) {
+      var x = document.getElementById(String(meteos[i]));
+      if(meteos[i].includes(String(graph))){
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        }
+      }else{
+        var y = document.getElementById(String('b' + meteos[i]));
+        if (x.style.display != "none") {
+          x.style.display = "none";
+          y.style.backgroundColor = "white";
+        }
+      }
+    }
+  }
+
+  function changeMeteoSA2019(element){
+    var meteos = ['sa_temp_2019', 'sa_prec_2019'];
+	  var butt = element.id;
+    var graph = String(butt).substring(1);
+    var y = document.getElementById(String(butt));
+    y.style.backgroundColor = "#E5E5E5";
+    for (var i = 0; i < meteos.length; i++) {
+      var x = document.getElementById(String(meteos[i]));
+      if(meteos[i].includes(String(graph))){
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        }
+      }else{
+        var y = document.getElementById(String('b' + meteos[i]));
+        if (x.style.display != "none") {
+          x.style.display = "none";
+          y.style.backgroundColor = "white";
+        }
+      }
+    }
+  }
+
+  function changeMeteoSA2020(element){
+    var meteos = ['sa_temp_2020', 'sa_prec_2020'];
+	  var butt = element.id;
+    var graph = String(butt).substring(1);
+    var y = document.getElementById(String(butt));
+    y.style.backgroundColor = "#E5E5E5";
+    for (var i = 0; i < meteos.length; i++) {
+      var x = document.getElementById(String(meteos[i]));
+      if(meteos[i].includes(String(graph))){
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        }
+      }else{
+        var y = document.getElementById(String('b' + meteos[i]));
+        if (x.style.display != "none") {
+          x.style.display = "none";
+          y.style.backgroundColor = "white";
+        }
+      }
+    }
+  }
+
+  function changeMeteoSA2021(element){
+    var meteos = ['sa_temp_2021', 'sa_prec_2021'];
+	  var butt = element.id;
+    var graph = String(butt).substring(1);
+    var y = document.getElementById(String(butt));
+    y.style.backgroundColor = "#E5E5E5";
+    for (var i = 0; i < meteos.length; i++) {
+      var x = document.getElementById(String(meteos[i]));
+      if(meteos[i].includes(String(graph))){
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        }
+      }else{
+        var y = document.getElementById(String('b' + meteos[i]));
+        if (x.style.display != "none") {
+          x.style.display = "none";
+          y.style.backgroundColor = "white";
+        }
+      }
+    }
+  }
+</script>
+{% endblock %}
+
+</body>
+</html>
