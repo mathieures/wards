@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np
+import matplotlib
+matplotlib.use('agg')
 import matplotlib.pyplot as plt
 from notes import months_names, notation_months
 import mpld3
@@ -95,4 +97,7 @@ def df_barplots(dfs, years, column, site, label):
     #fig_to_html(fig, name_save)
     name_save = "static/graphics/frequentation/" + site + "/" + "_".join(years) + ".png"
     plt.savefig(name_save)
+
+    # Libere la memoire correctement
+    plt.close()
 

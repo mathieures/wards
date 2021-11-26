@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np
+import matplotlib
+matplotlib.use('agg')
 import matplotlib.pyplot as plt
 from notes import months_names, notation_months
 from scipy.stats import pearsonr
@@ -47,6 +49,9 @@ def df_barplot_annee(df, year, site):
     name_save = "static/graphics/temperature/" + site + "/" + str(year) + ".png"
     plt.savefig(name_save)
 
+    # Libere la memoire correctement
+    plt.close()
+
 def barplot_moy_all(df, site):
     bar = df["Temp"]
     bar2 = df["nb_visiteurs"]
@@ -71,6 +76,9 @@ def barplot_moy_all(df, site):
 
     name_save = "static/graphics/temperature/" + site + "/" + "all.png"
     plt.savefig(name_save)
+
+    # Libere la memoire correctement
+    plt.close()
 
 def barplot_all(list, site):
         begin = 2018

@@ -2,6 +2,8 @@
 
 import pandas as pd
 import numpy as np
+import matplotlib
+matplotlib.use('agg')
 import matplotlib.pyplot as plt
 
 def months_names(string):
@@ -48,6 +50,9 @@ def barplot_one_year(df1, df2, year):
     name_save = "static/graphics/note/" + str(year) + ".png"
     plt.savefig(name_save)
 
+    # Libere la memoire correctement
+    plt.close()
+
 def barplot_all_years(list1, list2):
     if len(list1) != len(list2):
         return
@@ -74,6 +79,9 @@ def barplot_mean_years(df1, df2):
     #plt.legend(loc='upper center', bbox_to_anchor=(1.23, 1), ncol=1, fancybox=True, shadow=True)
     plt.title(title)
     plt.savefig("static/graphics/note/all.png")
+
+    # Libere la memoire correctement
+    plt.close()
 
 def mean_notes(dfs):
     months = notation_months()
