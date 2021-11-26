@@ -18,13 +18,13 @@ def months():
 
 def df_split_by_year(df):
     df2018 = df.iloc[0:12]
-    df2018["Date"] = df2018["Date"].map(lambda x: months_names(x))
+    df2018.loc[:, "Date"] = df2018["Date"].map(lambda x: months_names(x))
     df2019 = df.iloc[12:24]
-    df2019["Date"] = df2019["Date"].map(lambda x: months_names(x))
+    df2019.loc[:, "Date"] = df2019["Date"].map(lambda x: months_names(x))
     df2020 = df.iloc[24:36]
-    df2020["Date"] = df2020["Date"].map(lambda x: months_names(x))
+    df2020.loc[:, "Date"] = df2020["Date"].map(lambda x: months_names(x))
     df2021 = df.iloc[36:45]
-    df2021["Date"] = df2021["Date"].map(lambda x: months_names(x))
+    df2021.loc[:, "Date"] = df2021["Date"].map(lambda x: months_names(x))
     df2021.loc[46] = ["oct", 0, 0, 0, 0]
     df2021.loc[47] = ["nov", 0, 0, 0, 0]
     df2021.loc[48] = ["déc", 0, 0, 0, 0]
