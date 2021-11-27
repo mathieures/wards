@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Fréquentation</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/graphics_frequentation.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/flux.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/frequentation.css') }}">
 </head>
 
 <body>
@@ -370,34 +370,126 @@
     </div>
 
     <div class="div-3">
+      <div class="test">
+        <div class="title">
+          <p>Test de Kruskal</p>
+        </div>
+        <div class="content">
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">Nombre de visiteurs ~ Mois</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>p-value</td>
+                <td>0.87925</td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">Nombre de visiteurs ~ Année</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>p-value</td>
+                <td>0.00087</td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">~ signifie "en fonction de"</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
       <div class="stat">
         <div class="title">
           <p>Analyse statistique</p>
         </div>
         <div class="content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.
+          <p>Le test suggère que les échantillons proviennent de la même population, c'est-à-dire qu'il n'y a pas de différence significative entre tous ceux-ci. On en conclut qu'il n'y a pas de liaison entre la période de l'année et le nombre de visiteurs. Ce résultat peut être biaisé, lissé par la grande baisse du nombre de visiteurs sur tous les mois de 2020 et 2021, à cause du COVID.
+          <br/>
+          En effet, en cachant les deux années problématiques, on voit bien une tendance se montrer.
+          <br/>
+          <br/>
+          En revanche, les résultats nous montrent bien une relation entre l'année et le nombre de visiteurs, ce qui renforce l'hypothèse que 2020 et 2021 ont eu un impact.
+          <!--
+          Nombre de visiteurs ~ Mois : p-value : 0.8792544322066159
+          Nombre de visiteurs ~ Année : p-value : 0.000870160909533403
+
+          ~ signifie "en fonction de"
+          -->
           </p>
         </div>
       </div>
     </div>
 
     <div class="div-4">
+      <div class="test">
+        <div class="title">
+          <p>Test de Kruskal</p>
+        </div>
+        <div class="content">
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">Nombre de visiteurs ~ Mois</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>p-value</td>
+                <td>0.50359</td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">Nombre de visiteurs ~ Année</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>p-value</td>
+                <td>5.28e-06</td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">~ signifie "en fonction de"</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
       <div class="stat">
         <div class="title">
           <p>Analyse statistique</p>
         </div>
         <div class="content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.
+          <p>Selon le même procédé, on peut voir que le mois de l'année n'a pas d'influence significative sur le nombre de visiteurs.
+          <br/>
+          Cela peut être également dû au COVID, qui a tronqué la fréquentation déjà faible de ce lieu.
+          <br/>
+          <br/>
+          Mais ici encore, les tests montrent que l'année, elle, a un impact sur le nombre de visiteurs.
+          <!--
+          Nombre de visiteurs ~ Mois : p-value : 0.503585666769572
+          Nombre de visiteurs ~ Année : p-value : 5.284232025612775e-06
+
+          ~ signifie "en fonction de"
+          -->
           </p>
         </div>
       </div>
