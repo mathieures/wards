@@ -17,6 +17,12 @@
   display: flex;
   flex-flow: column;
   box-shadow: 0px 5px 5px gray;
+  display: flex;
+  align-items : center;
+}
+
+.pcenter {
+  text-align : center;
 }
 
 .tabwrapper .stat .title {

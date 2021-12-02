@@ -67,6 +67,7 @@
  text-align: justify;
  display: flex;
  justify-content: left;
+ flex-flow: column;
  margin-left: 20px;
  margin-right: 20px;
 }
@@ -95,6 +96,11 @@
   text-decoration: none;
   color: black;
 }
+
+.tabwrapper .stat .content ul {
+  margin-left: -25px;
+}
+
 
 .tabwrapper .div-1 {
   grid-column: 1;
@@ -150,4 +156,13 @@ thead,tfoot,tbody {
     font-size: 18px;
     text-decoration: none;
     color: black;
+}
+
+.pfrequentation {
+  font-family: 'Roboto', Calibri, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  text-decoration: none;
+  color: black;
 }
