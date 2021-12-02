@@ -1,4 +1,3 @@
-import unidecode
 import matplotlib.pyplot as plt
 
 
@@ -28,7 +27,7 @@ def getDico(nomFichier):
     
     return dico
 
-def nMax(dico, n):
+def nMax(dico, n): # dico -> {nomPays : nbVisiteur}
     maxi = []
     index = list(dico.keys())
 
@@ -87,32 +86,5 @@ def main():
 
         plt.savefig(f"Camembert_{sortie[i]}.png")
 
-        
-        
-
-
-        
-
-            
-
-
-def test():
-    frac=[1.40 , 10.86 , 19.31 , 4.02 , 1.43 , 2.66 , 4.70 , 0.70 , 0.13 , 1.48, 32.96 , 1.11 , 13.30 , 5.86]
-    labels=['HO0900344', 'HO0900331', 'HO0900332', 'HO0900354', 
-            'HO0900358', 'HO0900374', 'HO0900372', 'HO0900373', 
-            'HO0900371', 'HO0900370', 'HO0900369', 'HO0900356', 
-            'HO0900353', 'HO0900343']
-
-    colors=('b', 'g', 'r', 'c', 'm', 'y', 'burlywood', 'w')
-
-    plt.figure(figsize=(8,8))
-    patches, texts, autotexts = plt.pie(frac, colors=colors, labels=labels, autopct='%1.1f%%',textprops={'fontsize': 14})
-    for i in autotexts:
-        i.set_color('white')
-        i.set_fontsize(30)
-    #autotexts = map(lambda t: t.set_fontsize(30),autotexts)
-    plt.show()
-
 if __name__ == "__main__":
     main()
-    #test()

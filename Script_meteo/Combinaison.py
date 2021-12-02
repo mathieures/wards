@@ -54,7 +54,7 @@ def recupFichier(path):
     return mois,donnees
 
 def creationFichier(lieu,type,base):  # Pas fou mais bon ... Nan en vrai c'est cool
-    os.chdir("/home/thomas/Documents/Cours/M1/Semestre 1/ProjetIntégré/Code")   #A modifier pour le projet final
+    os.chdir("/home/thomas/Documents/Cours/M1/Semestre 1/ProjetIntégré/CodeGit/wards/Script-meteo")   #A modifier pour le projet final
     for l in lieu:
         for t in type:
             path = base + l + "/" + t + "/"
